@@ -28,6 +28,7 @@ router.delete('/api/notes/:id', (req, res) => {
   const newNotes = dataJSON.filter((note) => { 
     return note.id !== req.params.id;
   });
+  
   fs.writeFileSync("db/db.json",JSON.stringify(newNotes));
   res.json("Note deleted.");
 });
