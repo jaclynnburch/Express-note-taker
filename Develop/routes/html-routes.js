@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const path = require('path');
 
-// Defines the route that sends 'index.html' as a response to a client when a GET request is made
+// Writes the index.html route with GET request
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './develop/public/index.html'))
+    res.sendFile(path.resolve(__dirname, '../public/index.html'));
 });
-// Defines the route that sends 'notes.html' as a response to a client when a GET request is made 
+
 router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './develop/public/notes.html'))
+    res.sendFile(path.resolve(__dirname, '../public/notes.html'));
 });
 
 module.exports = router;
